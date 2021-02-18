@@ -43,6 +43,13 @@ namespace SchoolApp.Controllers
 
             //return View(userList);
 
+            // Categorizes the users according to their roles
+            //ViewBag.Admins = await _userManager.GetUsersInRoleAsync("Admin");
+            //ViewBag.Teachers = await _userManager.GetUsersInRoleAsync("Teacher");
+            //ViewBag.Students = await _userManager.GetUsersInRoleAsync("Student");
+
+            //return View();
+
             var users = _userManager.Users;
 
             return View(users);
