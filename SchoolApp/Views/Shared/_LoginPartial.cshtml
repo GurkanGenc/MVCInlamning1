@@ -1,7 +1,7 @@
 ﻿<ul class="navbar-nav">
     @if (SignInManager.IsSignedIn(User))
     {
-        if (User.IsInRole("Admin")) /*This is the part of the Claims. So to use it, we should add claims to our AppUserClaims file.*/
+        if (User.IsInRole("Admin")) /*This is the part of the Claims. To use it, we should add claims to our AppUserClaims file.*/
         {
             <li class="nav-item">
                 <a class="nav-link text-dark" asp-controller="Admin" asp-action="Index" title="Admin">Admin</a>

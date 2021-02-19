@@ -1,4 +1,4 @@
-﻿@model SchoolApp.Entities.SchoolClass
+﻿@model SchoolApp.Entities.SchoolClassesStudent
 
 @{
     ViewData["Title"] = "Create";
@@ -6,21 +6,20 @@
 
 <h1>Create</h1>
 
-<h4>SchoolClass</h4>
+<h4>SchoolClassesStudent</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="ClassName" class="control-label"></label>
-                <input asp-for="ClassName" class="form-control" />
-                <span asp-validation-for="ClassName" class="text-danger"></span>
+                <label asp-for="StudentId" class="control-label"></label>
+                @* ViewBag is a viewbag of AppUser and AppUser has DisplayName *@
+                @Html.DropDownListFor(m => m.StudentId, new SelectList(ViewBag.Students, "Id", "DisplayName"), "Select a Student")
             </div>
             <div class="form-group">
-                <label asp-for="TeacherId" class="control-label"></label>
-                @* ViewBag is a viewbag of AppUser and AppUser has DisplayName *@
-                @Html.DropDownListFor(m => m.TeacherId, new SelectList(ViewBag.Teachers, "Id", "DisplayName"), "Select a Teacher")
+                <label asp-for="SchoolClassId" class="control-label"></label>
+                <select asp-for="SchoolClassId" class ="form-control" asp-items="ViewBag.SchoolClassId"></select>
             </div>
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />
@@ -36,7 +35,3 @@
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }
-
-@*@section Scripts {
-    <partial name="_ValidationScriptsPartial" />
-}*@

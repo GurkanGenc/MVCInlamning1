@@ -73,4 +73,4 @@
 //}
 
 
-// It seems it is useless, ıt can be DELETED
+// It seems it is useless, it can be DELETED
