@@ -1,41 +1,42 @@
 ﻿@model IEnumerable<SchoolApp.Entities.SchoolClass>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Classes";
 }
 
-<h1>Index</h1>
+<h1 class="display-4 text-center">Classes</h1>
 
-<p>
-    <a asp-action="Create">Create New</a>
+<p class="text-end me-5">
+    <a class="create-link" asp-action="Create">Create New Class</a>
 </p>
-<table class="table">
+<table class="table  table-striped">
     <thead>
         <tr>
-            <th>
+            <th scope="col">
                 @Html.DisplayNameFor(model => model.ClassName)
             </th>
-            <th>
+            <th scope="col">
                 @Html.DisplayNameFor(model => model.TeacherId)
             </th>
             <th></th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.ClassName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Teacher.DisplayName)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-            </td>
-        </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ClassName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Teacher.DisplayName)
+                </td>
+                <td>
+                    <a class="inline-links" asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                    <a class="inline-links" asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                    <a class="inline-links" asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>

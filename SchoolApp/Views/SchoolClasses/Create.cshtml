@@ -17,20 +17,20 @@
                 <input asp-for="ClassName" class="form-control" />
                 <span asp-validation-for="ClassName" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div class="form-group mt-3">
                 <label asp-for="TeacherId" class="control-label"></label>
                 @* ViewBag is a viewbag of AppUser and AppUser has DisplayName *@
                 @Html.DropDownListFor(m => m.TeacherId, new SelectList(ViewBag.Teachers, "Id", "DisplayName"), "Select a Teacher")
             </div>
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+                <input type="submit" value="Create" class="btn btn-primary mt-2 mb-3" />
             </div>
         </form>
     </div>
 </div>
 
 <div>
-    <a asp-action="Index">Back to List</a>
+    <a class="create-link" asp-action="Index">Back to List</a>
 </div>
 
 @section Scripts {

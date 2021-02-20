@@ -20,20 +20,20 @@
                 <label asp-for="Email" class="control-label"></label>
                 <input asp-for="Email" class="form-control" />
             </div>
-            <div class="form-group">
+            <div class="form-group mt-3">
                 <label asp-for="Role" class="control-label"></label>
                 @*First "Name" comes from "AspNetRoles" table. Second is the text that be seen*@
                 @Html.DropDownListFor(m => m.Role, new SelectList(ViewBag.Roles, "Name", "Name"), "Select a Role")
             </div>
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+                <input type="submit" value="Create" class="btn btn-primary mt-2 mb-3" />
             </div>
         </form>
     </div>
 </div>
 
 <div>
-    <a asp-action="Index">Back to List</a>
+    <a class="create-link" asp-action="Index">Back to List</a>
 </div>
 
 @section Scripts {

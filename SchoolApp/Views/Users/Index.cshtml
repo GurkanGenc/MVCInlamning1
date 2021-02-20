@@ -1,34 +1,40 @@
 ﻿@model IEnumerable<AppUser>
 
-<a asp-action="Create">Create New User</a>
+<h1 class="display-4 text-center">Users</h1>
 
-@foreach (var user in Model)
-{
-    <div>@user.DisplayName</div>
-}
+<p class="text-end me-5">
+    <a class="create-link" asp-action="Create">Create New User</a>
+</p>
 
 @* Categorizes the users according to their roles *@
-
-@*<h5 class="mt-4">Administrators</h5>
-    @foreach (var user in ViewBag.Admins)
-    {
-        <div>@user.DisplayName</div>
-    }
-
-    <h5 class="mt-4">Program Managers</h5>
-    @foreach (var user in ViewBag.ProgramManagers)
-    {
-        <div>@user.DisplayName</div>
-    }
-
-    <h5 class="mt-4">Teachers</h5>
-    @foreach (var user in ViewBag.Teachers)
-    {
-        <div>@user.DisplayName</div>
-    }
-
-    <h5 class="mt-4">Students</h5>
-    @foreach (var user in ViewBag.Students)
-    {
-        <div>@user.DisplayName</div>
-    }*@
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">Administrators</th>
+            <th scope="col">Teachers</th>
+            <th scope="col">Students</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+                @foreach (var user in ViewBag.Admins)
+                {
+                    <div>@user.DisplayName</div>
+                }
+            </td>
+            <td>
+                @foreach (var user in ViewBag.Teachers)
+                {
+                    <div>@user.DisplayName</div>
+                }
+            </td>
+            <td>
+                @foreach (var user in ViewBag.Students)
+                {
+                    <div>@user.DisplayName</div>
+                }
+            </td>
+        </tr>
+    </tbody>
+</table>

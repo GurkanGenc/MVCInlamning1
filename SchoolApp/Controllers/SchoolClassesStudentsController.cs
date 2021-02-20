@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -11,6 +12,7 @@ using SchoolApp.Entities;
 
 namespace SchoolApp.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class SchoolClassesStudentsController : Controller
     {
         private readonly SchoolAppDbContext _context;
@@ -26,7 +28,20 @@ namespace SchoolApp.Controllers
         public async Task<IActionResult> Index()
         {
             var schoolAppDbContext = _context.SchoolClassesStudents.Include(s => s.SchoolClass);
+
+            ViewData["StudentId"] = new SelectList(_context.SchoolClassesStudents, "Id", "StudentName");
+
             return View(await schoolAppDbContext.ToListAsync());
+
+            //var students = await _context.SchoolClassesStudents.ToListAsync();
+
+            //foreach (var student in students)
+            //{
+            //    // Checks all the users and gets the user who has the same id with StudentId.
+            //    student.Student = await _userManager.Users.FirstOrDefaultAsync(appuser => appuser.Id == student.StudentId);
+            //}
+
+            //return View(students);
         }
 
         // GET: SchoolClassesStudents/Details/5
@@ -52,8 +67,11 @@ namespace SchoolApp.Controllers
         public async Task<IActionResult> Create()
         {
             ViewBag.Students = await _userManager.GetUsersInRoleAsync("Student");
+            //var students = await _userManager.GetUsersInRoleAsync("Student");
 
+            //ViewData["StudentId"] = new SelectList(students, "Id", "DisplayName");
             ViewData["SchoolClassId"] = new SelectList(_context.SchoolClasses, "Id", "ClassName");
+
             return View();
         }
 

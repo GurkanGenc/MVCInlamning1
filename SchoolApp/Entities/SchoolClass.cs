@@ -18,7 +18,7 @@ namespace SchoolApp.Entities
         public Guid Id { get; set; }
         public string ClassName { get; set; }
 
-        [DisplayName("Teacher")] // Show "Admin" instead of AdminId.
+        [DisplayName("Teacher")] // Show "Teacher" instead of TeacherId.
         public string TeacherId { get; set; }
 
         public virtual AppUser Teacher { get; set; } // Gets all the users

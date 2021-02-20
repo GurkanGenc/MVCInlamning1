@@ -1,28 +1,77 @@
-﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
-for details on configuring this project to bundle and minify static web assets. */
-
-a.navbar-brand {
-  white-space: normal;
-  text-align: center;
-  word-break: break-all;
+﻿body {
+    background-color: whitesmoke
 }
 
-/* Provide sufficient contrast against white background */
-a {
-  color: #0366d6;
+#admin-navbar {
+    background-color: #5f2cbe;
+    max-width: none;
 }
 
-.btn-primary {
-  color: #fff;
-  background-color: #1b6ec2;
-  border-color: #1861ac;
+div ul {
+    display: flex;
+    padding-right: 10%;
 }
 
-.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
-  color: #fff;
-  background-color: #1b6ec2;
-  border-color: #1861ac;
+.admin-link {
+    color: whitesmoke;
+    background-color: #5f2cbe;
+    padding-top: 0;
+    padding-bottom: .1rem;
+    padding-left: .3rem;
+    padding-right: .3rem;
+    border-radius: 0.1rem;
 }
+
+    .admin-link:hover {
+        background-color: whitesmoke;
+        color: #5f2cbe;
+    }
+
+.create-link {
+    text-decoration: none;
+    color: #5f2cbe;
+    border: #5f2cbe solid 2px;
+    border-radius: .4rem;
+    padding: .2rem;
+}
+
+    .create-link:hover {
+        color: whitesmoke;
+        background-color: #5f2cbe;
+    }
+
+.inline-links {
+    text-decoration: none;
+    color: #5f2cbe;
+    /*border: #5f2cbe solid 2px;*/
+    border-radius: .3rem;
+    padding: .1rem .2rem;
+    padding-top: 0;
+}
+
+    .inline-links:hover {
+        color: whitesmoke;
+        background-color: #5f2cbe;
+    }
+
+#user-navbar {
+    background-color: #dec5f5;
+    font-size: 1.1rem;
+}
+
+    #user-navbar a, #user-navbar button {
+        color: #7a443a;
+    }
+
+        #user-navbar a:hover {
+            background-color: #dec5f5;
+        }
+
+
+
+
+
+
 
 /* Sticky footer styles
 -------------------------------------------------- */

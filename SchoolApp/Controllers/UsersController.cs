@@ -22,7 +22,7 @@ namespace SchoolApp.Controllers
             _roleManager = roleManager;
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
             //var userList = new List<UserViewModel>();
 
@@ -43,16 +43,16 @@ namespace SchoolApp.Controllers
 
             //return View(userList);
 
-            // Categorizes the users according to their roles
-            //ViewBag.Admins = await _userManager.GetUsersInRoleAsync("Admin");
-            //ViewBag.Teachers = await _userManager.GetUsersInRoleAsync("Teacher");
-            //ViewBag.Students = await _userManager.GetUsersInRoleAsync("Student");
+            //Categorizes the users according to their roles
+            ViewBag.Admins = await _userManager.GetUsersInRoleAsync("Admin");
+            ViewBag.Teachers = await _userManager.GetUsersInRoleAsync("Teacher");
+            ViewBag.Students = await _userManager.GetUsersInRoleAsync("Student");
 
-            //return View();
+            return View();
 
-            var users = _userManager.Users;
+            //var users = _userManager.Users;
 
-            return View(users);
+            //return View(users);
         }
 
         public IActionResult Create()

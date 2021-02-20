@@ -4,32 +4,31 @@
     ViewData["Title"] = "Create";
 }
 
-<h1>Create</h1>
+<h3>Add a Student</h3>
 
-<h4>SchoolClassesStudent</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
+                <label asp-for="SchoolClassId" class="control-label"></label>
+                <select asp-for="SchoolClassId" class="form-control" asp-items="ViewBag.SchoolClassId"></select>
+            </div>
+            <div class="form-group mt-3">
                 <label asp-for="StudentId" class="control-label"></label>
                 @* ViewBag is a viewbag of AppUser and AppUser has DisplayName *@
                 @Html.DropDownListFor(m => m.StudentId, new SelectList(ViewBag.Students, "Id", "DisplayName"), "Select a Student")
             </div>
             <div class="form-group">
-                <label asp-for="SchoolClassId" class="control-label"></label>
-                <select asp-for="SchoolClassId" class ="form-control" asp-items="ViewBag.SchoolClassId"></select>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+                <input type="submit" value="Create" class="btn btn-primary mt-2 mb-3" />
             </div>
         </form>
     </div>
 </div>
 
 <div>
-    <a asp-action="Index">Back to List</a>
+    <a class="create-link" asp-action="Index">Back to List</a>
 </div>
 
 @section Scripts {
