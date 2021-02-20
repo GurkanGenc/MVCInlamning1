@@ -18,7 +18,7 @@ namespace SchoolApp.Entities
         [DisplayName("Student")]
         public string StudentId { get; set; }
 
-        [DisplayName("Classes")]
+        [DisplayName("Class")]
         public Guid SchoolClassId { get; set; }
 
         [DisplayName("Class")]

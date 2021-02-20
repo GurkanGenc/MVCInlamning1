@@ -4,27 +4,115 @@
     ViewData["Title"] = "Details";
 }
 
-<h1>Details</h1>
+<h1 class="text-center display-4 mt-3 mb-5">
+    @Html.DisplayFor(model => model.ClassName)
+</h1>
 
-<div>
-    <h4>SchoolClass</h4>
-    <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.ClassName)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.ClassName)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.TeacherId)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.TeacherId)
-        </dd>
-    </dl>
+<div class="container d-flex">
+    <div class="row">
+        <div class="col-sm mb-4">
+            <div class="card">
+                <img src="~/images/teacher3.png" class="card-img-top" style="border-radius: 50%;">
+                <div class="card-body">
+                    <span>@Html.DisplayFor(model => model.Teacher.DisplayName)"DisplayName"</span>
+                    <span>"Role"</span>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm mb-4">
+            <div class="card">
+                <img src="~/images/student1.png" class="card-img-top" style="border-radius: 50%;">
+                <div class="card-body">
+                    <span>"DisplayName"</span>
+                    <span>"Role"</span>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm">
+            <div class="card">
+                <img src="~/images/student2.png" class="card-img-top"style="border-radius: 50%;">
+                <div class="card-body">
+                    <span>"DisplayName"</span>
+                    <span>"Role"</span>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm">
+            <div class="card">
+                <img src="~/images/student3.png" class="card-img-top" style="border-radius: 50%;">
+                <div class="card-body">
+                    <span>"DisplayName"</span>
+                    <span>"Role"</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm">
+            <div class="card">
+                <img src="~/images/student4.png" class="card-img-top" style="border-radius: 50%;">
+                <div class="card-body">
+                    <span>"DisplayName"</span>
+                    <span>"Role"</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="card">
+                <img src="~/images/student5.png" class="card-img-top" style="border-radius: 50%;">
+                <div class="card-body">
+                    <span>"DisplayName"</span>
+                    <span>"Role"</span>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card">
+                <img src="~/images/student6.png" class="card-img-top" style="border-radius: 50%;">
+                <div class="card-body">
+                    <span>"DisplayName"</span>
+                    <span>"Role"</span>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card">
+                <img src="~/images/student7.png" class="card-img-top" style="border-radius: 50%;">
+                <div class="card-body">
+                    <span>"DisplayName"</span>
+                    <span>"Role"</span>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
-<div>
-    <a class="inline-links" asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
+
+<div class="mt-3 justify-items-end">
     <a class="create-link" asp-action="Index">Back to List</a>
 </div>
+
+
+@*<h1>Details</h1>
+
+    <div>
+        <h4>SchoolClass</h4>
+        <hr />
+        <dl class="row">
+            <dt class = "col-sm-2">
+                @Html.DisplayNameFor(model => model.ClassName)
+            </dt>
+            <dd class = "col-sm-10">
+                @Html.DisplayFor(model => model.ClassName)
+            </dd>
+            <dt class = "col-sm-2">
+                @Html.DisplayNameFor(model => model.TeacherId)
+            </dt>
+            <dd class = "col-sm-10">
+                @Html.DisplayFor(model => model.TeacherId)
+            </dd>
+        </dl>
+    </div>
+    <div>
+        <a class="inline-links" asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
+        <a class="create-link" asp-action="Index">Back to List</a>
+    </div>*@
