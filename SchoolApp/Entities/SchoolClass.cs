@@ -16,6 +16,8 @@ namespace SchoolApp.Entities
         }
 
         public Guid Id { get; set; }
+
+        [DisplayName("Class")]
         public string ClassName { get; set; }
 
         [DisplayName("Teacher")] // Show "Teacher" instead of TeacherId.

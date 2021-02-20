@@ -32,16 +32,6 @@ namespace SchoolApp.Controllers
             ViewData["StudentId"] = new SelectList(_context.SchoolClassesStudents, "Id", "StudentName");
 
             return View(await schoolAppDbContext.ToListAsync());
-
-            //var students = await _context.SchoolClassesStudents.ToListAsync();
-
-            //foreach (var student in students)
-            //{
-            //    // Checks all the users and gets the user who has the same id with StudentId.
-            //    student.Student = await _userManager.Users.FirstOrDefaultAsync(appuser => appuser.Id == student.StudentId);
-            //}
-
-            //return View(students);
         }
 
         // GET: SchoolClassesStudents/Details/5
@@ -67,9 +57,7 @@ namespace SchoolApp.Controllers
         public async Task<IActionResult> Create()
         {
             ViewBag.Students = await _userManager.GetUsersInRoleAsync("Student");
-            //var students = await _userManager.GetUsersInRoleAsync("Student");
 
-            //ViewData["StudentId"] = new SelectList(students, "Id", "DisplayName");
             ViewData["SchoolClassId"] = new SelectList(_context.SchoolClasses, "Id", "ClassName");
 
             return View();

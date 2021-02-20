@@ -24,35 +24,12 @@ namespace SchoolApp.Controllers
 
         public async Task<IActionResult> Index()
         {
-            //var userList = new List<UserViewModel>();
-
-            //foreach(var user in _userManager.Users)
-            //{
-            //    var roles = await _userManager.GetRolesAsync(user);
-
-            //    // AutoMapper can be used here
-            //    userList.Add(new UserViewModel
-            //    {
-            //        Id = user.Id,
-            //        FirstName = user.FirstName,
-            //        LastName = user.LastName,
-            //        Email = user.Email,
-            //        Role = roles.FirstOrDefault()
-            //    });
-            //}
-
-            //return View(userList);
-
             //Categorizes the users according to their roles
             ViewBag.Admins = await _userManager.GetUsersInRoleAsync("Admin");
             ViewBag.Teachers = await _userManager.GetUsersInRoleAsync("Teacher");
             ViewBag.Students = await _userManager.GetUsersInRoleAsync("Student");
 
             return View();
-
-            //var users = _userManager.Users;
-
-            //return View(users);
         }
 
         public IActionResult Create()

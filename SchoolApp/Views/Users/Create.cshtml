@@ -22,7 +22,7 @@
             </div>
             <div class="form-group mt-3">
                 <label asp-for="Role" class="control-label"></label>
-                @*First "Name" comes from "AspNetRoles" table. Second is the text that be seen*@
+                @*First "Name" comes from "AspNetRoles" table. Second is the text that to be seen*@
                 @Html.DropDownListFor(m => m.Role, new SelectList(ViewBag.Roles, "Name", "Name"), "Select a Role")
             </div>
             <div class="form-group">
