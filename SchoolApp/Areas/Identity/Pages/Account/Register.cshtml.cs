@@ -66,9 +66,6 @@ namespace SchoolApp.Areas.Identity.Pages.Account
         public IActionResult OnGetAsync(string returnUrl = null)
         {
             return LocalRedirect("/"); // Goes to the home page.
-
-            //ReturnUrl = returnUrl;
-            //ExternalLogins = (await _signInManager.GetExternalAuthenticationSchemesAsync()).ToList();
         }
 
         public async Task<IActionResult> OnPostAsync(string returnUrl = null)

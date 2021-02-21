@@ -11,11 +11,15 @@ namespace SchoolApp.Models
         public string Id { get; set; }
 
         [Required]
+        [StringLength(50, ErrorMessage = "The {0} must be at least {2} and at max {1} characters long.", MinimumLength = 2)]
         [DataType(DataType.Text)]
+        [Display(Name = "Name")]
         public string FirstName { get; set; }
 
         [Required]
+        [StringLength(50, ErrorMessage = "The {0} must be at least {2} and at max {1} characters long.", MinimumLength = 2)]
         [DataType(DataType.Text)]
+        [Display(Name = "Surname")]
         public string LastName { get; set; }
 
         [Required]
